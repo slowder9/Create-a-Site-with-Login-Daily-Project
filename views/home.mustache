@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <h1>Hi, {{ username }}!</h1>
+    <p>You've logged in {{ loginCount }} times!</p>
+    <!-- <a href="/logout">logout</a> -->
+
+    <h2>What's Up?</h2>
+    <form method="post" action="/message">
+        <input type="text" name="msg" placeholder="Whatcha wanna talk about?">
+        <input type="submit" value="Send">
+    </form>
+
+    <h2>What everyone else is up to...</h2>
+    <ul>
+    {{ #messages }}
+        <li>
+            "{{ msg }}" -- {{ username }}
+        </li>
+    {{ /messages }}
+    </ul>
+
+    <form method="post" action="/logout">
+    <input type="submit" value="Log Out">
+    </form>
+
+</body>
+</html>
